@@ -975,7 +975,7 @@ function download(name,obj){const a=document.createElement("a");a.href=URL.creat
 /* ===== ส่งข้อมูลเข้า Google Sheet ส่วนตัวของโรงเรียน (คิวออฟไลน์ + ส่งซ้ำ) =====
    ใส่ลิงก์เว็บแอป Apps Script (https://script.google.com/macros/s/.../exec) แทน RECEIVER_URL
    ถ้ายังไม่ใส่ แอปยังใช้ได้ปกติ และเก็บคิวไว้ในเครื่องจนกว่าจะมีลิงก์ */
-const SYNC={url:"RECEIVER_URL",key:"kruom-piyamit-p6",batch:50,max:2000,qkey:STORE_KEY+"_sendQueue"};
+const SYNC={url:"https://script.google.com/macros/s/AKfycby4JDY_nskNrjxikx0gEb1jET9hfBXFiYxWzdNBWcboGd3RU0pSjB4WnA9aHhInSHhu1g/exec",key:"kruom-piyamit-p6",batch:50,max:2000,qkey:STORE_KEY+"_sendQueue"};
 let syncBusy=false;
 function syncReady(){return /^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test(SYNC.url);}
 function sqLoad(){try{return JSON.parse(localStorage.getItem(SYNC.qkey)||"[]");}catch(e){return[];}}
